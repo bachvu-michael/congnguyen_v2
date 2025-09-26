@@ -1,0 +1,18 @@
+{
+    "interactive":"true",
+    "JVM":{
+        "heapSize":"1024"
+    },
+    "name":"congnguyen_v2",
+    "trayIcon":"C:/Users/BachVuMinh/.CommandBox/cfml/modules/preside-commands/_resources/trayicon.png",
+    "web":{
+        "http":{
+            "port":"50237"
+        },
+        "rewrites":{
+            "config":"urlrewrite.xml",
+            "enable":"true"
+        },
+        "webroot":"/"
+    }
+}

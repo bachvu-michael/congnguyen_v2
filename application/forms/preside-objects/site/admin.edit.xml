@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<tab id="navigation" sortorder="40" title="preside-objects.site:editform.navigationtab.title">
+		<fieldset id="header" sortorder="31" title="preside-objects.site:editform.headersection.title">
+			<field binding="site.top_text" />
+		</fieldset>
+	</tab>
+</form>

@@ -1,0 +1,7 @@
+/WEB-INF
+/uploads
+/logs
+/application/config/.injectedConfiguration
+/preside
+/assets/node_modules
+.twgit*

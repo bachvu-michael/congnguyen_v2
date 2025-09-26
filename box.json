@@ -1,0 +1,26 @@
+{
+    "name":"congnguyen",
+    "version":"1.0.0",
+    "author":"",
+    "slug":"congnguyen",
+    "createPackageDirectory":false,
+    "private":true,
+    "dependencies":{
+        "presidecms":"^10.29.2+0009956",
+        "preside-ext-launcher":"^1.0.10+0000028",
+        "preside-ext-alt-admin-theme":"^1.2.1+0000422",
+        "preside-ext-blog":"^0.6.0",
+        "preside-ext-first-time-login-lockdown":"^1.0.0+0000004",
+        "preside-ext-sitemap":"^1.2.4+0000015",
+        "preside-ext-dev-helpers":"^1.0.2"
+    },
+    "installPaths":{
+        "presidecms":"preside/",
+        "preside-ext-launcher":"application/extensions/preside-ext-launcher/",
+        "preside-ext-alt-admin-theme":"application/extensions/preside-ext-alt-admin-theme/",
+        "preside-ext-blog":"application/extensions/preside-ext-blog/",
+        "preside-ext-first-time-login-lockdown":"application/extensions/preside-ext-first-time-login-lockdown/",
+        "preside-ext-sitemap":"application/extensions/preside-ext-sitemap/",
+        "preside-ext-dev-helpers":"application/extensions/preside-ext-dev-helpers/"
+    }
+}
