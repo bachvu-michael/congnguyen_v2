@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--#!autodoc
+Sitetree page type: Homepage: edit form
+
+This form is used when editing pages in the site tree manager whose page type is "homepage".
+It gets mixed in with the [[form-sitetreepageeditform]] and its purpose is to remove a number of unwanted fields and tabs from the default form.
+
+>>> There is no 'add' form for the homepage page type because there can only be and must always be a single homepage in a given site (subject to change).
+-->
+<form feature="sitetree">
+	<tab id="main">
+		<fieldset id="main">
+			<field name="page.parent_page" 		deleted="true" />
+			<field name="page.active"      		deleted="true" />
+			<field name="page.slug"        		deleted="true" />
+			<field name="page.layout"      		deleted="true" />
+			<field binding="page.main_content" 	deleted="true"/>
+
+			<field name="product_hight_light"   control="objectpicker" object="product" multiple="true"/>
+			<field name="blog_tag"    	control="objectpicker" object="blog_tag" multiple="true"/>
+			<field name="blog_list_for_homepage"    control="objectpicker"	object="blog"/>
+		</fieldset>
+	</tab>
+
+	<tab id="dates" deleted="true" />
+</form>

@@ -8,24 +8,25 @@
 
 <cfscript>
     pageLink = event.buildLink( page=args.id );
+	picture  = len(args.main_image) ? event.buildLink( assetId=args.main_image  ) : "/assets/img/banner_empty.jpg";
 </cfscript>
 
 <cfoutput>
-    <div class="articles-item">
-        <div class="articles-item-image">
-            <a href="#pageLink#">
-                #renderAsset( assetId=args.main_image, args={ derivative=args.mainImageDerivative } )#
-            </a>
+    <li
+        class="post-elem col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div
+            class="post-item effect-04 style-bottom-info">
+            <div class="thumbnail">
+                <a href="#pageLink#" class="link-to-post"><img
+                        src="#picture#"
+                        width="370" height="270"
+                        alt></a>
+            </div>
+            <div class="post-content">
+                <h4 class="post-name"><a href="#pageLink#"
+                        class="linktopost">#args.title#</a></h4>
+                <p class="excerpt">#args.teaser#</p>
+            </div>
         </div>
-        <div class="articles-item-details">
-            <h3><a href="#pageLink#">#args.title#</a></h3>
-            <ul class="list-details">
-                <!--- TODO: i18n date format --->
-                <li>#dateFormat( args.publish_date, "dd mmm yyyy" )#</li>
-                <li>#args.post_author#</li>
-            </ul>
-            <p>#args.teaser#</p>
-        </div>
-    </div>
+    </li>
 </cfoutput>
-

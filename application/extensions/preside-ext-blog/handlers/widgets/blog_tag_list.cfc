@@ -4,8 +4,8 @@ component {
     property name="blogDao" inject="presidecms:object:blog";
 
 	private function index( event, rc, prc, args={} ) {
-
-		args.tags = blogService.getBlogPostTags( parentPage=( args.blog ?:"invalidId" ), featuredOnly=args.featured ?: false );
+		var featured = listFindNoCase("true,1,yes,on", args.featured) GT 0;
+		args.tags = blogService.getBlogPostTags( parentPage=( args.blog ?:"invalidId" ), featuredOnly=featured );
 		
 		return renderView( view='widgets/blog_tag_list/index', args=args );
 	}

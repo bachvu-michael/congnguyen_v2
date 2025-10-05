@@ -3,21 +3,20 @@
 
 <cfif !isEmpty( args.tags )>
 	<cfoutput>
-		<div class="widget widget-tags">
+		<div class="widget biolife-filter">
 			<cfif args.title.len()>
-				<h3 class="widget-title">#args.title#</h3>
+				<h4 class="wgt-title">#args.title#</h4>
 			</cfif>
-
-			<div class="widget-content">
-				<ul class="tags">
+			<div class="wgt-content">
+				<ul class="cat-list">
 					<cfloop query="args.tags">
 						#renderView( view='widgets/blog_tag_list/_item', args={
-							  id 		= id
+								id 		= id
 							, label 	= label
 							, post_count = post_count
 							, blog	    = args.blog
 						} )#
-					</cfloop>					
+					</cfloop>		
 				</ul>
 			</div>
 		</div>

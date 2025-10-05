@@ -63,7 +63,7 @@
 * Global Settings       *
 *************************/
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     line-height: 24px;
     font-weight: 400;
@@ -4967,7 +4967,7 @@ body.open-overlay #overlay{
     line-height: 1;
 }
 .biolife-title-box.style-02 .subtitle{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 14px;
     font-weight: 600;
     text-transform: uppercase;
@@ -6567,8 +6567,8 @@ body.open-overlay #overlay{
     z-index: 5;
 }
 .main-content>.row{
-    font-size: 0;
-    line-height: 0;
+    /* font-size: 0;
+    line-height: 0; */
 }
 .main-content .main-post-list{
     display: inline-block;
@@ -8019,7 +8019,7 @@ li.slick-current .slider-opt04__layout01 .buttons .btn{
 .biolife-banner__promotion2.advance .text-content .second-line i{
     font-weight: 600;
     font-style: normal;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
 }
 .biolife-banner__promotion3{

@@ -1,84 +1,138 @@
-<cf_presideparam name="args.title"        	   field="page.title"        		   editable="true"  />
-<cf_presideparam name="args.main_content"      field="page.main_content" 		   editable="true"  />
-<cf_presideparam name="args.main_image"    	   field="page.main_image" 			   editable="false" />
-<cf_presideparam name="args.publish_date"      field="blog_post.publish_date" 	   editable="true"  />
-<cf_presideparam name="args.allow_comments"    field="blog_post.allow_comments"    editable="false" />
-<cf_presideparam name="args.authorName" 	   field="postAuthor.name" 		  	   editable="false" />
-<cf_presideparam name="args.authorDescription" field="postAuthor.description" 	   editable="false" />
-<cf_presideparam name="args.authorPicture" 	   field="postAuthor.picture" 		   editable="false" />
+<cfparam name="args.id"        	   	   field="page.id"        		 	   />
+<cfparam name="args.parent_page"       field="page.parent_page"        	   />
+<cfparam name="args.title"        	   field="page.title"        		   />
+<cfparam name="args.main_content"      field="page.main_content" 		   />
+<cfparam name="args.main_image"    	   field="page.main_image" 			   />
+<cfparam name="args.publish_date"      field="blog_post.publish_date" 	   />
+<cfparam name="args.allow_comments"    field="blog_post.allow_comments"    />
+<cfparam name="args.authorName" 	   field="postAuthor.name" 		  	   />
+<cfparam name="args.authorDescription" field="postAuthor.description" 	   />
+<cfparam name="args.authorPicture" 	   field="postAuthor.picture" 		   />
 
 <cfscript>
-	bannerImageSource = len( args.main_image ) ? event.buildLink( assetId=args.main_image, derivative= "blogPostBanner"  ) : "";
-	// TODO: check if we should integrate that in the extension or have it in the skeleton
-	event.include( assetId="/css/specific/blog-post/", throwOnMissing=false )
-		 .include( assetId="jq-parallax", throwOnMissing=false );
+	// bannerImageSource = len( args.main_image ) ? event.buildLink( assetId=args.main_image  ) : "";
+	// prc.tagsFull
+	// tagsRelated
+	// blogPosts
+    // isShowSideBar
+	// dump( prc );
+	// dump( args ); abort;
+    classContainer = prc.isShowSideBar ? "col-lg-9 col-md-8 col-sm-12 col-xs-12" : "col-md-12";
+    
 </cfscript>
 
 <cfoutput>
-	<div class="contents" >
+    <div class="page-contain blog-page right-sidebar">
+        <div class="container">
+            <div class="row">
 
-		<cfif len( bannerImageSource )>
-			<div class="page-banner">
-				<div class="page-banner-item" >
-					<div class="page-banner-item-image" data-parallax="scroll" data-speed="0.5" data-image-src="#bannerImageSource#"></div>
-				</div>
-			</div>
-		</cfif>
+                <!-- Main content -->
+                <div id="main-content" class="main-content #classContainer#">
 
-		<div class="main-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-md-8 col-md-offset-2">
-						<h1>#args.title#</h1>
+                    <!--Single Post Contain-->
+                    <div class="single-post-contain">
 
-						<ul class="list-details">
-							<li>#args.publish_date#</li>
-							<li>#args.authorName#</li>
-						</ul>
+                        <div class="post-head">
+							<!---
+							<cfif len( bannerImageSource )>
+								<div class="thumbnail">
+                                	<figure>
+										<img src="#bannerImageSource#" width="870" height="635" alt=""></figure>
+                            	</div>
+							</cfif>
+							--->
+                          	<h1 class="post-name">#args.title#</h1>
+                            <p class="post-archive">
+								<b class="post-cat">Ngày xuất bản:</b>
+								<span class="post-date">#args.publish_date#</span>
+								<span>|</span>
+								<b class="post-cat">Tác giả:</b>
+								<span class="author"> #args.authorName#</span>
+								<span>|</span>
+								<cfloop query="prc.tagsRelated">
+									<cfset tagLink = event.buildLink( page="#args.parent_page#", querystring="filterAction=redirect&filterType=tags&filterValue=" & prc.tagsRelated.id ) />
+									<b class="post-cat">Danh mục:</b>
+									<a href="#tagLink#" class="tag-link">#prc.tagsRelated.label#</a>
+								</cfloop>
+							</p>
+                        </div>
 
-						#args.main_content#
+                        <div class="post-content">
+							#args.main_content#
+                        </div>
 
-						<cfif prc.tags.recordCount>
-							<div class="tag-list">
-								<p>#translateResource( uri='page-types.blog_post:post.tag_hint' )#</p>
-								<ul class="tags">
-									<cfloop query="prc.tags">
-										<li><a href="#event.buildLink( page=prc.presidePage.parent_page, queryString='filterAction=add&filterType=tags&filterValue=#prc.tags.id#' )#">#prc.tags.label#</a></li>
-									</cfloop>
-								</ul>
-							</div>
-						</cfif>
+                        <div class="post-foot">
+							<!---
+                            <div class="post-tags">
+                                <span class="tag-title">Tags:</span>
+                                <ul class="tags">
+                                    <li><a href="##" class="tag-link">Juice Drink</a></li>
+                                    <li><a href="##" class="tag-link">Fast Food</a></li>
+                                    <li><a href="##" class="tag-link">Fresh Food</a></li>
+                                    <li><a href="##" class="tag-link">Hot</a></li>
+                                    <li><a href="##" class="tag-link">Backpack</a></li>
+                                    <li><a href="##" class="tag-link">Grooming</a></li>
+                                </ul>
+                            </div>
+							--->
+                        </div>
 
-						#renderView( view="/general/_social_sharing" )#
+                    </div>
 
-						<div class="author">
+                </div>
+                <cfif prc.isShowSideBar>
+                    <!-- Sidebar -->
+                    <aside id="sidebar" class="sidebar blog-sidebar col-lg-3 col-md-4 col-sm-12 col-xs-12">
 
-							<h4>#translateResource( uri='page-types.blog_post:post.author' )#</h4>
+                        <div class="biolife-mobile-panels">
+                            <span class="biolife-current-panel-title">Sidebar</span>
+                            <a class="biolife-close-btn" href="##" data-object="open-mobile-filter">&times;</a>
+                        </div>
 
-							<div class="author-image">
-								<!--- TODO: implement link to where? (maybe the blog list filtered by author) --->
-								<a href="##">
-									#renderAsset( assetId=args.authorPicture, args={ derivative="blogPostAuthor" } )#
-								</a>
-							</div>
+                        <div class="sidebar-contain">
+                            <!--Categories Widget-->
+                            <div class="widget biolife-filter">
+                                <h4 class="wgt-title">Danh mục dự án</h4>
+                                <div class="wgt-content">
+                                    <ul class="cat-list">
+                                        <cfloop query="prc.tagsFull">
+                                            <cfset tagLink = event.buildLink( page="#args.parent_page#", querystring="filterAction=redirect&filterType=tags&filterValue=" & prc.tagsFull.id ) />
+                                            <li class="cat-list-item"><a href="#tagLink#" class="cat-link">#prc.tagsFull.label# (#prc.tagsFull.post_count#)</a></li>
+                                        </cfloop>
+                                    </ul>
+                                </div>
+                            </div>
 
-							<div class="author-details">
-								<!--- TODO: implement link to where? (maybe the blog list filtered by author) --->
-								<h5><a href="##">#args.authorName#</a></h5>
-								<cfif len( args.authorDescription )>
-									<p>#args.authorDescription#</p>
-								</cfif>
-							</div>
-
-						</div>
-
-						<cfif args.allow_comments>
-							<div class="disqus-thread-wrapper"><div id="disqus_thread"></div></div>
-						</cfif>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                            <!--Posts Widget-->
+                            <div class="widget posts-widget">
+                                <h4 class="wgt-title">Dự án gần đây</h4>
+                                <div class="wgt-content">
+                                    <ul class="posts">
+                                    <cfloop query="prc.blogPosts">
+                                        <cfscript>
+                                            picture  = len(prc.blogPosts.main_image) ? event.buildLink( assetId=prc.blogPosts.main_image  ) : "/assets/img/banner_empty.jpg";
+                                            link = event.buildLink( page=prc.blogPosts.id );
+                                        </cfscript>
+                                        <li>
+                                            <div class="wgt-post-item">
+                                                <div class="thumb">
+                                                    <a href="#link#"><img src="#picture#" width="80" height="58" alt=""></a>
+                                                </div>
+                                                <div class="detail">
+                                                    <h4 class="post-name"><a href="#link#">#prc.blogPosts.title#</a></h4>
+                                                    <p class="post-archive">#dateFormat(prc.blogPosts.publish_date, "dd-mm-yyyy")#
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </cfloop>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </cfif>
+            </div>
+        </div>
+    </div>
 </cfoutput>

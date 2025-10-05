@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<tab id="standard" sortorder="10">
+		<fieldset id="standard" sortorder="10">
+			<field binding="product.title" />
+			<field binding="product.slug" />
+			<field binding="product.teaser" />
+			<field binding="product.main_content" />
+			<field binding="product.main_image" />
+			<field binding="product.list_product_image" />
+			<field binding="product.author" />
+			<field binding="product.product_highline" />
+			<field binding="product.product_new" />
+			<field binding="product.product_discount" />
+			<field binding="product.category" />
+		</fieldset>
+	</tab>
+	<tab id="advance" sortorder="10">
+		<fieldset id="advance" sortorder="10">
+			<field sortorder="20" binding="product.noIndex" />
+			<field sortorder="20" binding="product.noFollow" />
+			<field sortorder="20" binding="product.headerScript" />
+
+			<field sortorder="20" binding="product.og_locale" />
+			<field sortorder="20" binding="product.og_type" />
+			<field sortorder="20" binding="product.og_title" />
+			<field sortorder="20" binding="product.og_description" />
+			<field sortorder="20" binding="product.og_url" />
+			<field sortorder="20" binding="product.og_site_name" />
+			<field sortorder="20" binding="product.og_image" />
+		</fieldset>
+	</tab>
+</form>

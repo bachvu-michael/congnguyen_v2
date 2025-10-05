@@ -6,5 +6,12 @@ component extends="preside.system.Bootstrap" {
 		  id                       = "congnguyen"
 		, presideSessionManagement = true
 	);
+	this.charset = "UTF-8";
+	this.encoding = { 
+		request: "UTF-8", 
+		template: "UTF-8" 
+	};
+	this.serialization.preserveCaseForStructKey=true;
+	function onError() { dump( arguments ); abort; } 
 
 }

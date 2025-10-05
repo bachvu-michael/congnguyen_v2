@@ -7,18 +7,27 @@
     <cfoutput>
         <div class="filter-tags">
             <!--- TODO: i18n --->
-            <span class="filter-tags-label">Showing result for</span>
+            <span class="filter-tags-label">Kết quả cho:</span>
             <cfloop query="args.authors">
                 <cfset link = event.buildLink( page=args.blogId, querystring="filterAction=remove&filterType=authors&filterValue=" & id ) />
-                <span class="filter-tags-item">#name# <a href="#link#"><i class="font-icon font-icon-close"></i></a></span>
+                <a href="#link#" class="badge badge-success filter-tags-item">
+                    #name#
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
             </cfloop>
             <cfloop query="args.archives">
                 <cfset link = event.buildLink( page=args.blogId, querystring="filterAction=remove&filterType=archives&filterValue=" & key ) />
-                <span class="filter-tags-item">#label# <a href="#link#"><i class="font-icon font-icon-close"></i></a></span>
+                <a href="#link#" class="badge badge-success filter-tags-item">
+                    #label#
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
             </cfloop>
             <cfloop query="args.tags">
                 <cfset link = event.buildLink( page=args.blogId, querystring="filterAction=remove&filterType=tags&filterValue=" & id ) />
-                <span class="filter-tags-item">#label# <a href="#link#"><i class="font-icon font-icon-close"></i></a></span>
+                <a href="#link#" class="badge badge-success filter-tags-item">
+                    #label#
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </a>
             </cfloop>
         </div>
     </cfoutput>

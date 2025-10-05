@@ -13,7 +13,7 @@
         _setBlogService( arguments.blogService );
         _setSessionStorage( arguments.sessionStorage );
 
-        _setValidFilterActions( [ "add", "remove" ] );
+        _setValidFilterActions( [ "add", "remove", "redirect" ] );
         _setValidFilterTypes( [ "tags", "authors", "archives" ] );
 
         return this;
@@ -26,8 +26,16 @@
         , required string type
         , required string value
     ) {
+      
 
         if ( !_isValidFilterAction( arguments.action ) || !_isValidFilterType( arguments.type ) || !len( arguments.value ) ) {
+            _setStoredFilters( arguments.blogId, { tags=[], archives=[], authors=[] } );
+            return;
+        }
+        // reset filter if all arguments are empty
+        // this is used to reset the filters when the blog page is loaded
+        if ( isEmpty( arguments.action ) && isEmpty( arguments.type ) && isEmpty( arguments.value ) ) {
+            _setStoredFilters( arguments.blogId, { tags=[], archives=[], authors=[] } );
             return;
         }
 
@@ -41,6 +49,18 @@
             if ( i > 0 ) {
                 filters[ arguments.type ].deleteAt( i );
             }
+        } else if(arguments.action == "redirect") {
+            // redirect mean remove all filters and redirect to blog page with new filter
+            filters = { tags=[], archives=[], authors=[] };
+            if ( arguments.type == "tags" ) {
+                filters.tags.append( arguments.value );
+            } else if ( arguments.type == "authors" ) {
+                filters.authors.append( arguments.value );
+            } else if ( arguments.type == "archives" ) {
+                filters.archives.append( arguments.value );
+            }           
+        } else {
+
         }
 
         _setStoredFilters( arguments.blogId, filters );

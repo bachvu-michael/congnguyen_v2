@@ -17,12 +17,24 @@ component {
         );
     }
 
-    private function twocol( event, rc, prc, args={} ) {
+    private function second_layout( event, rc, prc, args={} ) {
 
-        _getBlogPosts( event=event, rc=rc, prc=prc, rowgrouping=2 );
+        _getBlogPosts( event=event, rc=rc, prc=prc);
 
         return renderView(
-              view          = 'page-types/blog/twocol'
+              view          = 'page-types/blog/second_layout'
+            , presideObject = 'blog'
+            , id            = event.getCurrentPageId()
+            , args          = args
+        );
+    }
+
+    private function third_layout( event, rc, prc, args={} ) {
+
+        _getBlogPosts( event=event, rc=rc, prc=prc);
+
+        return renderView(
+              view          = 'page-types/blog/third_layout'
             , presideObject = 'blog'
             , id            = event.getCurrentPageId()
             , args          = args

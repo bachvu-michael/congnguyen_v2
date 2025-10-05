@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+	<tab id="standard" sortorder="10">
+		<fieldset id="standard" sortorder="10">
+			<field binding="category.title" />
+			<field binding="category.slug" />
+			<field binding="category.active" />
+		</fieldset>
+	</tab>
+	<tab id="advance" sortorder="10">
+		<fieldset id="advance" sortorder="10">
+			<field sortorder="20" binding="category.og_locale" />
+			<field sortorder="20" binding="category.og_type" />
+			<field sortorder="20" binding="category.og_title" />
+			<field sortorder="20" binding="category.og_description" />
+			<field sortorder="20" binding="category.og_url" />
+			<field sortorder="20" binding="category.og_site_name" />
+			<field sortorder="20" binding="category.og_image" />
+		</fieldset>
+	</tab>
+</form>
