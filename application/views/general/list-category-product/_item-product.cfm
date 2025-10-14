@@ -17,7 +17,7 @@
                         alt></a>
             </div>
             <div class="post-content">
-                <h4 class="post-name"><a href="##"
+                <h4 class="post-name"><a href="#pageLink#"
                         class="linktopost">#args.title#</a></h4>
             </div>
         </div>
