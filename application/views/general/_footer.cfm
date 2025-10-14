@@ -1,5 +1,6 @@
 <cfscript>
-
+    site                    = event.getSite();
+	footer_column_links 	= site.footer_column_links;
 </cfscript>
 <cfoutput>
     <section class="pre-footer">
@@ -70,6 +71,14 @@
                                     <div
                                         class="wrap-custom-menu vertical-menu-2">
                                         <ul class="menu">
+                                            <cfif !isEmpty(footer_column_links)>
+                                                #renderView(
+                                                    view          = "/general/links_view/_footer_column_link"
+                                                    , presideObject = "link"
+                                                    , filter        = { id=listToArray( footer_column_links ) }
+                                                    , orderBy       = "FIELD( id, #listqualify( footer_column_links, "'" )# )"
+                                                )#
+                                            </cfif>
                                             <li><a href="##">Chính sách bảo hành</a></li>
                                             <li><a href="##">Chính sách vận chuyển</a></li>
                                             <li><a href="##">Chính sách bảo mật thông tin</a></li>

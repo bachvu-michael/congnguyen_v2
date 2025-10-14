@@ -3,6 +3,7 @@
 	<tab id="navigation" sortorder="40" title="preside-objects.site:editform.navigationtab.title">
 		<fieldset id="header" sortorder="31" title="preside-objects.site:editform.headersection.title">
 			<field binding="site.top_text" />
+			<field binding="site.footer_column_links" control="linkPicker" object="link" sortable="true" quickadd="true" quickedit="true" multiple="true"/>
 		</fieldset>
 	</tab>
 </form>

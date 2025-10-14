@@ -11,4 +11,6 @@ component extends="preside.system.base.SystemPresideObject" displayName="Page ty
 	property name="product_hight_light" type="string"  dbtype="text"  	required=false;
 	property name="blog_tag"    type="string"  dbtype="text"  	required=false;
 	property name="blog_list_for_homepage" relatedTo="blog" relationship="many-to-one"  required=false;
+	property name="product_list_link" type="string"  dbtype="text"  required=false;
+
 }

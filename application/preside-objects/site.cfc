@@ -9,6 +9,7 @@ component {
 
 
     //footer
+    property name="footer_column_links"                type="string"   dbtype="text";
     // property name="logo_footer"                 relationship="many-to-one" relatedto="asset" allowedTypes="images";
     // property name="title_footer"                type="string"   dbtype="varchar" default="NEWSLETTER";
 

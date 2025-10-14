@@ -19,6 +19,7 @@ It gets mixed in with the [[form-sitetreepageeditform]] and its purpose is to re
 			<field name="product_hight_light"   control="objectpicker" object="product" multiple="true"/>
 			<field name="blog_tag"    	control="objectpicker" object="blog_tag" multiple="true"/>
 			<field name="blog_list_for_homepage"    control="objectpicker"	object="blog"/>
+			<field name="product_list_link"    control="linkpicker"	object="link" multiple="false"/>
 		</fieldset>
 	</tab>
 
