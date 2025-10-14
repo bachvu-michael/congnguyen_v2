@@ -22,7 +22,7 @@ component {
 	property name="title"        		type="string"  dbtype="varchar"  maxLength="200" required=true control="textinput";
 	property name="slug" 				control="vnautoSlug" required="true" basedOn="title" uniqueindexes="slug";
 
-	property name="teaser"       		type="string"  dbtype="text"  					 required=false;
+	property name="teaser"       		type="string"  dbtype="varchar"   maxLength="500" 	 required=false;
 	property name="main_content" 		type="string"  dbtype="text"                     required=false;
 	property name="main_image"   		relationship="many-to-one" relatedTo="asset"     required=false allowedTypes="image" ondelete="set-null-if-no-cycle-check" onupdate="cascade-if-no-cycle-check";
 	property name="list_product_image"   		type="string" dbtype="text" control="assetpicker"  allowtypes="png,jpg"  multiple="true" sortable="true" quickadd="true" quickedit="true";
