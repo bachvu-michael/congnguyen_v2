@@ -8,6 +8,7 @@ component {
     property name="pageDao" inject="presidecms:object:page";
     property name="blogDao" inject="presidecms:object:blog";
     property name="blogTagDao" inject="presidecms:object:blog_tag";
+	property name="presideObjectService" inject="presideObjectService";
 
     private function render_tag( event, rc, prc, args={} ) {
         var tagIds = listToArray( args.blog_tag );
@@ -36,6 +37,35 @@ component {
 
         return renderView(
               view          = 'page-types/homepage/_render_tag'
+            , id            = event.getCurrentPageId()
+            , args          = args
+        );
+    }
+
+    private function render_products(event, rc, prc, args={}){
+
+        prc.listProduct = presideObjectService.selectData(
+			objectName = "product"
+			, propertyName ="category"
+			, selectFields = ["product.title as product_title,
+							product.id as product_id,
+							product.slug as product_slug,
+							main_image,
+							author,
+							teaser,
+							product_highline,
+							product_new,
+							product_discount,
+							category.slug as category_slug,
+							category.title as category_title,
+							product.datecreated"
+							]
+            , filter 	= { id=listToArray( args.product_hight_light ) }
+			, limit        = 8
+		);
+
+        return renderView(
+              view          = 'general/list-category-product/_item-product'
             , id            = event.getCurrentPageId()
             , args          = args
         );

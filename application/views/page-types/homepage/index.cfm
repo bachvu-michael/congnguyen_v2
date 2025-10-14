@@ -26,15 +26,7 @@
 			</div>
 			<ul class="biolife-carousel nav-center nav-none-on-mobile"
 				data-slick='{"rows":2,"arrows":true,"dots":false,"infinite":false,"speed":400,"slidesMargin":30,"slidesToShow":4, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 3}},{"breakpoint":992, "settings":{ "slidesToShow": 2}},{"breakpoint":768, "settings":{ "slidesToShow": 2}},{"breakpoint":600, "settings":{ "slidesToShow": 1}}]}'>
-				<cfif !isEmpty(args.product_hight_light)>
-					#renderView(
-						view = "/general/list-category-product/_item-product"
-						, presideObject = "product"
-						, filter 	= { id=listToArray( args.product_hight_light ) }
-						, orderBy 	= "FIELD( id, #listqualify( args.product_hight_light, "'" )# )"
-						, maxRows  	= 8
-					)#
-				</cfif>
+				#renderViewlet( event="page-types.homepage.render_products", args={ product_hight_light=args.product_hight_light })#
 			</ul>
 		</div>
 	</div>
