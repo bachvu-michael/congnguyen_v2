@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-10 col-xs-10">
-                        <a href="home-04.html" class="biolife-logo"><img
+                        <a href="/" class="biolife-logo"><img
                                 src="/assets/img/logo_text.png"
                                 alt="cong nguyen logo" width="300">
                         </a>
