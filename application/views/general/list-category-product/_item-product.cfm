@@ -2,10 +2,10 @@
 <cfparam name="args.title" default />
 <cfparam name="args.slug" default />
 <cfparam name="args.main_image" default />
+<cfparam name="args.category_slug" default />
 <cfscript>
 	picture  = len(args.main_image) ? event.buildLink( assetId=args.main_image  ) : "/assets/img/banner_empty.jpg";
-    pageLink = event.buildLink( page=args.id );
-
+    pageLink = event.buildLink( linkto='#args.category_slug#.#args.slug#' );
 </cfscript>
 <cfoutput>
     <li>
