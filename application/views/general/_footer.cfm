@@ -79,6 +79,7 @@
                                                     , orderBy       = "FIELD( id, #listqualify( footer_column_links, "'" )# )"
                                                 )#
                                             </cfif>
+                                            <!---
                                             <li><a href="##">Chính sách bảo hành</a></li>
                                             <li><a href="##">Chính sách vận chuyển</a></li>
                                             <li><a href="##">Chính sách bảo mật thông tin</a></li>
@@ -86,6 +87,7 @@
                                             <li><a href="##">Phương thức thanh toán</a></li>
                                             <li><a href="##">Chính sách kiểm hàng</a></li>
                                             <li><a href="##">Giờ làm việc: T2 -T7 (Từ: 7:00 - 16:30)</a></li>
+                                            --->
                                         </ul>
                                     </div>
                                 </div>
