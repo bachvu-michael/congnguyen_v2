@@ -209,6 +209,14 @@ footer .footer-item .section-sub-title {
   object-fit: contain;
   background-color: #d9d9d9;
 }
+.blog-page .posts-list .post-item .thumbnail.product-thumbnail img {
+  width: 270px;
+  height: 270px;
+}
+.blog-page .posts-list .post-item .thumbnail.info-thumbnail img {
+  width: 370px;
+  height: 270px;
+}
 .blog-page .posts-list .post-item .post-content {
   padding: 0 10px;
   min-height: 100px;

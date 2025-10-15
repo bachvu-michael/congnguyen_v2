@@ -43,7 +43,7 @@
                                         <p class="info-item">
                                             <i
                                                 class="biolife-icon icon-location"></i>
-                                            <b class="desc">Địa chỉ: 314 KP Bàu Lòng, Xã Trừ Văn Thố, TP Hồ Chí Minh, Việt Nam </b>
+                                            <b class="desc">Địa chỉ: 314 Ấp Bàu Lòng, Xã Trừ Văn Thố, TP Hồ Chí Minh, Việt Nam </b>
                                         </p>
                                     </li>
                                     <li>
@@ -101,7 +101,7 @@
                     </div>
                     <div class="col-xs-12">
                         <div class="copy-right-text">
-                            <p>© #Year( Now() )# <b>Bach Vu</b>. All rights reserved.</p>
+                            <p>© #Year( Now() )# <b>Cong Nguyen</b>. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

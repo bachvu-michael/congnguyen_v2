@@ -53,28 +53,33 @@
                                     <img src="/assets/img/icon-book.png"
                                         width="60" alt="icon-book">
                                     <div class="content">
-                                        <a href="##" class="profile">Hồ sơ năng
-                                            lực</a>
+                                        <a href="https://online.fliphtml5.com/upjgp/wdyq/" class="profile" target="_blank">Hồ sơ năng lực</a>
                                     </div>
                                 </div>
                                 <div class="cart-item social">
-                                    <a href="##" target="_blank"
+                                    <a href="https://www.facebook.com/congnguyenbinhduong" target="_blank"
                                         class="social-icon">
                                         <img
                                             src="/assets/img/icon-social-facebook.png"
                                             width="40" alt="icon-facebook">
                                     </a>
-                                    <a href="##" target="_blank"
+                                    <a href="https://zalo.me/0938356395" target="_blank"
                                         class="social-icon">
                                         <img
                                             src="/assets/img/icon-social-zalo.png"
                                             width="40" alt="icon-zalo">
                                     </a>
-                                    <a href="##" target="_blank"
+                                    <a href="https://www.tiktok.com/@nguyenthanhcongbh.1982" target="_blank"
                                         class="social-icon">
                                         <img
                                             src="/assets/img/icon-social-tiktok.png"
                                             width="40" alt="icon-tiktok">
+                                    </a>
+                                    <a href="https://www.youtube.com/@congnguyen1982" target="_blank"
+                                        class="social-icon">
+                                        <img
+                                            src="/assets/img/icon-social-youtube.png"
+                                            width="40" alt="icon-youtube">
                                     </a>
                                 </div>
                             </div>
