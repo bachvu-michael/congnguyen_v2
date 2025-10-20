@@ -15,7 +15,7 @@
 /**
  * @dataManagerGroup product
  * @labelField title
- * @datamanagerGridFields title,slug,datecreated,datemodified
+ * @datamanagerGridFields title,slug,category,datecreated,datemodified
  */
 
 component {

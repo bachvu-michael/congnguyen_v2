@@ -79,7 +79,16 @@ component {
         var blog            = prc.presidePage       ?: {};
         var initialMaxRows  = blog.initial_max_rows ?: 10;
         var maxRows         = rc.maxRows            ?: initialMaxRows;
+
+        var currentPage     = rc.currentPage        ?: 1;
+        if(!StructKeyExists(rc, "currentPage") || !isNumeric(rc.currentPage) || rc.currentPage < 0){
+            currentPage = 1;
+        }
+
         var blogId          = event.getCurrentPageId();
+
+        maxRowsPagin = initialMaxRows;
+        startRowPagin = (currentPage - 1) * maxRowsPagin + 1;
 
         blogFilters.manage(
               blogId = blogId
@@ -93,7 +102,9 @@ component {
             , tags                    = blogFilters.getTagFilterIds( blogId )
             , postAuthors             = blogFilters.getAuthorFilterIds( blogId )
             , archives                = blogFilters.getArchiveFilterKeys( blogId )
-            , maxRows                 = maxRows
+            // , maxRows                 = maxRows
+            , maxRows                 = maxRowsPagin
+            , startRow                = startRowPagin
             , includeTotalRecordCount = true
         );
 
@@ -102,6 +113,9 @@ component {
         prc.authorFilters  = blogFilters.getAuthorFilters( blogId );
         prc.archiveFilters = blogFilters.getArchiveFilters( blogId );
         prc.hasMore        = !isEmpty( prc.blogPosts ) && prc.blogPosts._totalRecordCount > prc.blogPosts.recordCount;
+        prc.recordCount    = prc.blogPosts.recordCount;
+        prc.totalRecordCount    = prc.blogPosts._totalRecordCount;
+    
     }
 
     private query function _handleRowGrouping( required query q, required numeric rowGrouping ) {

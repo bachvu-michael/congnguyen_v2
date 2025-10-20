@@ -39,9 +39,9 @@
                     </ul>
 
                 </div>
-                #renderView( view="page-types/blog/_moreLink", args={
-                    hasMore=prc.hasMore, maxRows=rc.maxRows ?:
-                    prc.presidePage.initial_max_rows } )#
+                #renderView( view="page-types/blog/_pagination", 
+                    args={ recordCount=prc.presidePage.initial_max_rows, totalRecordCount=prc.totalRecordCount, currentPage=rc.currentPage ?: 1} 
+                )#
 
             </div>
         </div>
