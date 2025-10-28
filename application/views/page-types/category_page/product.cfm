@@ -148,7 +148,7 @@
                                         <b class="categories">#category_title#</b>
                                         <h4 class="product-title"><a href="#link#" class="pr-name">#product_title#</a></h4>
                                         <div class="slide-down-box">
-                                            <p class="message">#product_slug#</p>
+                                            <p class="message">#teaser#</p>
                                             <div class="buttons">
                                                 <a href="#link#" class="btn add-to-cart-btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>xem thêm</a>
                                             </div>
