@@ -4,6 +4,7 @@
 		<fieldset id="standard" sortorder="10">
 			<field binding="category.title" />
 			<field binding="category.slug" />
+			<field binding="category.icon" />
 			<field binding="category.active" />
 		</fieldset>
 	</tab>

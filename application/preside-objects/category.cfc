@@ -22,6 +22,9 @@ component  {
 	property name="title" 	required="true" ;
 	property name="slug" 	control="vnautoSlug" required="true" basedOn="title" uniqueindexes="slug";
 	property name="active" 	type="boolean" dbtype="boolean" required=false default=true;
+	property name="icon" control="select"
+		values="fa-headset,fa-layer-group,fa-bars,fa-file-alt,fa-user,fa-desktop,fa-briefcase,fa-shopping-basket,fa-tag,fa-globe,fa-cubes,fa-cogs,fa-chart-bar,fa-chart-pie,fa-chart-line,fa-chart-area,fa-comments,fa-envelope,fa-bell,fa-bullhorn,fa-calendar-alt,fa-clock,fa-map-marker-alt"
+		default="fa-cubes";
 
 	property name="og_locale" 			type="string"  dbtype="varchar" ;
 	property name="og_type" 			type="string"  dbtype="varchar" ;

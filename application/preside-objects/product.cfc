@@ -21,6 +21,7 @@
 component {
 	property name="title"        		type="string"  dbtype="varchar"  maxLength="200" required=true control="textinput";
 	property name="slug" 				control="vnautoSlug" required="true" basedOn="title" uniqueindexes="slug";
+	property name="price" 				type="numeric" dbtype="decimal" precision="10,2" required=false default=0.00 control="textinput";
 
 	property name="teaser"       		type="string"  dbtype="varchar"   maxLength="500" 	 required=false;
 	property name="main_content" 		type="string"  dbtype="text"                     required=false;
@@ -37,7 +38,7 @@ component {
 	property name="noIndex" 			type="string" dbtype="varchar" control="yesNoSwitch" ;
 	property name="noFollow" 			type="string" dbtype="varchar" control="yesNoSwitch" ;
 	property name="headerScript" 			type="string"  dbtype="text" control="textarea";
-	property name="review" 	type="string"  	dbtype="varchar" formula="CONCAT( 'https://','#cgi.http_host#', '/', slug,'/')"  control="none" adminrenderer="link_review";
+	property name="review" 	type="string"  	dbtype="varchar" formula="CONCAT( 'https://','#cgi.http_host#', '/', category.slug,'/',product.slug,'/')"  control="none" adminrenderer="link_review";
 
 	// property name="title_tab" 			type="string"  dbtype="varchar" ;
 	// property name="description_tab" 	type="string"  dbtype="varchar" ;

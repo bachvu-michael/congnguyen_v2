@@ -272,6 +272,13 @@ footer .footer-item .section-sub-title {
 .single-post-contain .post-content img {
   width: 100%;
 }
+.single-post-contain .post-content a {
+  color: #0097B2;
+  text-decoration: underline;
+}
+.single-post-contain .post-content a:hover {
+  color: #006c7f;
+}
 .contact-info-container .frst-desc {
   margin: 16px 0 0;
   color: #000000;

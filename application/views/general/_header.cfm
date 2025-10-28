@@ -6,6 +6,7 @@
     if ( event.getCurrentPresideUrlPath() == "/" ) {
         classActiveHome = "active";
     }
+    listCategory = prc.listCategory;
 </cfscript>
 <cfoutput>
     <!-- HEADER -->
@@ -99,8 +100,7 @@
                                     <span class="line-2"></span>
                                     <span class="line-3"></span>
                                 </span>
-                                <span class="menu-title">Danh mục sản
-                                    phẩm</span>
+                                <span class="menu-title">Danh mục sản phẩm</span>
                                 <span class="angle"
                                     data-tgleclass="fa fa-caret-down"><i
                                         class="fa fa-caret-up"
@@ -108,11 +108,12 @@
                             </div>
                             <div class="wrap-menu">
                                 <ul class="menu clone-main-menu">
-                                    <li class="menu-item menu-item-has-children has-megamenu">
-                                         <a href="##" class="menu-name"
-                                            data-title="Fruit & Nut Gifts"><i class="fa fa-cubes" aria-hidden="true"></i>Coming soon!</a>
-                                    </li>
-                                    
+                                    <cfloop query="listCategory">
+                                        <cfset link = event.buildLink( linkto="#slug#" ) />
+                                        <li class="menu-item menu-item-has-children has-megamenu">
+                                            <a href="#link#" class="menu-name"><i class="fa #icon#" aria-hidden="true"></i>#title#</a>
+                                        </li>
+                                    </cfloop>
                                     <!---
                                     <li
                                         class="menu-item menu-item-has-children has-megamenu">

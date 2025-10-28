@@ -62,6 +62,7 @@ component {
 							product.slug as product_slug,
 							main_content,
 							main_image,
+							price,
 							product_highline,
 							product_new,
 							product_discount,
@@ -140,16 +141,18 @@ component {
 			if(prc.category.recordcount()){
 				prc.product = presideObjectService.selectData(
 					objectName = "product"
-					// , selectFields = ["product.title,
-					// 					product.slug,
-					// 					product.id,
-					// 					product.teaser,
-					// 					product.main_content,
-					// 					product.main_image,
-					// 					product.list_product_image,
-					// 					category.id as category_id,
-					// 					category.slug as category_slug
-					// 				"]
+					, selectFields = ["product.title,
+										product.slug,
+										product.id,
+										product.price,
+										product.teaser,
+										product.main_content,
+										product.main_image,
+										product.list_product_image,
+										category.id as category_id,
+										category.slug as category_slug,
+										category.title as category_title
+									"]
 					, filter       = "product.slug = :productSlug"
 					, filterParams  = { "productSlug" = {type="string", value=pathArray[2]} }
 				);
@@ -258,13 +261,13 @@ component {
 
 		var info = prc.category.getRow(1)
 		prc.presidePage.title        			= info.title;
-		prc.presidePage.og_locale 				= info.og_locale;
-		prc.presidePage.og_type 				= info.og_type;
-		prc.presidePage.og_title 				= info.og_title;
-		prc.presidePage.og_description 			= info.og_description;
-		prc.presidePage.og_url 					= info.og_url;
-		prc.presidePage.og_site_name 			= info.og_site_name;
-		prc.presidePage.og_image 				= info.og_image;
+		// prc.presidePage.og_locale 				= info.og_locale;
+		// prc.presidePage.og_type 				= info.og_type;
+		// prc.presidePage.og_title 				= info.og_title;
+		// prc.presidePage.og_description 			= info.og_description;
+		// prc.presidePage.og_url 					= info.og_url;
+		// prc.presidePage.og_site_name 			= info.og_site_name;
+		// prc.presidePage.og_image 				= info.og_image;
 
 		return renderView(
 			  view          = 'page-types/category_page/category'
@@ -295,13 +298,13 @@ component {
 		
 		var info = prc.product.getRow(1)
 		prc.presidePage.title        			= info.title;
-		prc.presidePage.og_locale 				= info.og_locale;
-		prc.presidePage.og_type 				= info.og_type;
-		prc.presidePage.og_title 				= info.og_title;
-		prc.presidePage.og_description 			= info.og_description;
-		prc.presidePage.og_url 					= info.og_url;
-		prc.presidePage.og_site_name 			= info.og_site_name;
-		prc.presidePage.og_image 				= info.og_image;
+		// prc.presidePage.og_locale 				= info.og_locale;
+		// prc.presidePage.og_type 				= info.og_type;
+		// prc.presidePage.og_title 				= info.og_title;
+		// prc.presidePage.og_description 			= info.og_description;
+		// prc.presidePage.og_url 					= info.og_url;
+		// prc.presidePage.og_site_name 			= info.og_site_name;
+		// prc.presidePage.og_image 				= info.og_image;
 
 		return renderView(
 			  view          = 'page-types/category_page/product'

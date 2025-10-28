@@ -3,12 +3,18 @@
  */
 component {
 	property name="siteTreeSvc" inject="siteTreeService";
+	property name="presideObjectService" inject="presideObjectService";
 
 <!--- VIEWLETS --->
 
 	private function mainNavigation( event, rc, prc, args={} ) {
 		var activeTree = ListToArray( event.getPageProperty( "ancestorList" ) );
 		    activeTree.append( event.getCurrentPageId() );
+
+		prc.listCategory =  presideObjectService.selectData(
+			objectName = "category"
+			, filter       = "category.active = true"
+		);
 
 		args.menuItems = siteTreeSvc.getPagesForNavigationMenu(
 			  rootPage        = args.rootPage     ?: siteTreeSvc.getSiteHomepage().id

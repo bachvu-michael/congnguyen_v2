@@ -4,6 +4,7 @@
 		<fieldset id="standard" sortorder="10">
 			<field binding="product.title" />
 			<field binding="product.slug" />
+			<field binding="product.price" />
 			<field binding="product.teaser" />
 			<field binding="product.main_content" />
 			<field binding="product.main_image" />

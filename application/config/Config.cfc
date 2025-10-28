@@ -124,6 +124,22 @@ component extends="preside.system.config.Config" {
 			};
 
 		*/
+
+		settings.assetManager.derivatives = settings.assetManager.derivatives ?: {};
+
+		settings.assetManager.derivatives.88x88 = {
+				permissions     = "inherit"
+			, inEditor        = true // means users will be able to choose when inserting an image in richeditor
+			, autoQueue       = [ "image" ] // auto queue this derivative for these asset types
+			, transformations = [ { method="Resize", args={ width=88, height=88 } } ]
+		};
+
+		settings.assetManager.derivatives.270x270 = {
+				permissions     = "inherit"
+			, inEditor        = true // means users will be able to choose when inserting an image in richeditor
+			, autoQueue       = [ "image" ] // auto queue this derivative for these asset types
+			, transformations = [ { method="Resize", args={ width=270, height=270 } } ]
+		};
 	}
 
 	private void function _setupFeatures() {
