@@ -48,13 +48,14 @@
 								<span>|</span>
 								<b class="post-cat">Tác giả:</b>
 								<span class="author"> #args.authorName#</span>
-								<span>|</span>
-								<cfloop query="prc.tagsRelated">
-									<cfset tagLink = event.buildLink( page="#args.parent_page#", querystring="filterAction=redirect&filterType=tags&filterValue=" & prc.tagsRelated.id ) />
-									<b class="post-cat">Danh mục:</b>
-									<a href="#tagLink#" class="tag-link">#prc.tagsRelated.label#</a>
-								</cfloop>
-							</p>
+                                <cfif prc.tagsRelated.recordCount NEQ 0>
+                                    <span>|</span>
+                                    <b class="post-cat">Danh mục:</b>
+                                    <cfloop query="prc.tagsRelated">
+                                        <cfset tagLink = event.buildLink( page="#args.parent_page#", querystring="filterAction=redirect&filterType=tags&filterValue=" & prc.tagsRelated.id ) />
+                                        <a href="#tagLink#" class="tag-link">#prc.tagsRelated.label#</a>,
+                                    </cfloop>
+                                </cfif>
                         </div>
 
                         <div class="post-content">

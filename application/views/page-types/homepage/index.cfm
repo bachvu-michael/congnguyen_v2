@@ -30,5 +30,45 @@
 			</ul>
 		</div>
 	</div>
+	<section class="history-area">
+		<h2>QUÁ TRÌNH PHÁT TRIỂN QUẢNG CÁO CÔNG NGUYỄN</h2>
+		<div class="container">
+			<img src="/assets/img/history-banner.jpg" alt="cong nguyen history" loading="lazy">
+		</div>
+	</section>
+	
+	<section class="target-area container">
+		<h2>TẦM NHÌN VÀ SỨ MỆNH</h2>
+		<div class="list-card">
+			<div class="card">
+				<div class="card-body">
+					<img src="/assets/img/icon1.png" alt="icon" class="card-icon">
+					<h3 class="card-title">Khách hàng là trung tâm</h3>
+					<p class="card-text">Chúng tôi quan tâm đến khách hàng, đặt lợi ích khách hàng lên hàng đầu, coi niềm vui của khách hàng trên hết.</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<img src="/assets/img/icon2.png" alt="icon" class="card-icon">
+					<h3 class="card-title">Sáng tạo</h3>
+					<p class="card-text">Chúng tôi tạo ra các ý tưởng mới, độc đáo và gây ấn tượng, giúp khách hàng nổi bật và thu hút sự chú ý về thương hiệu của họ.</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<img src="/assets/img/icon3.png" alt="icon" class="card-icon">
+					<h3 class="card-title">Hiệu quả</h3>
+					<p class="card-text">Chúng tôi nhanh chóng xác định nhu cầu của khách hàng từ đó nhanh nhất có được sản phẩm tối ưu nhất.</p>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-body">
+					<img src="/assets/img/icon4.png" alt="icon" class="card-icon">
+					<h3 class="card-title">Đổi mới và tiến bộ</h3>
+					<p class="card-text">Chúng tôi luôn luôn có những sản phẩm bắt kịp xu thế hiện tại, từ đó không để những điều đem đến cho khách hàng là lỗi thời.</p>
+				</div>
+			</div>
 
+		</div>
+	</section>
 </cfoutput>

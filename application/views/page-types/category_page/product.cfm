@@ -74,40 +74,20 @@
                             <p class="for-today">0938356395</p>
                         </div>
                     </div>
-                    <div class="action-form">
-                        <div class="quantity-box">
-                            <span class="title">Số Lượng:</span>
-                            <div class="qty-input">
-                                <input type="text" name="qty12554" value="1" data-max_value="20" data-min_value="1" data-step="1">
-                                <a href="##" class="qty-btn btn-up"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
-                                <a href="##" class="qty-btn btn-down"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                    <div class="action-form custom-category-detail">
+                        <div class="widget biolife-filter">
+                            <h4 class="wgt-title">Danh mục sản phẩm</h4>
+                            <div class="wgt-content">
+                                <ul class="cat-list">
+                                    <cfloop query="listCategory">
+                                        <cfset link=event.buildLink(
+                                            linkto="#slug#" ) />
+                                        <li class="cat-list-item"><a
+                                                class="cat-link"
+                                                href="#link#">#title#</a></li>
+                                    </cfloop>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="buttons">
-                            <a href="##" class="btn add-to-cart-btn">add to cart</a>
-                            <!---
-                            <p class="pull-row">
-                                <a href="##" class="btn wishlist-btn">wishlist</a>
-                                <a href="##" class="btn compare-btn">compare</a>
-                            </p>
-                            --->
-                        </div>
-                        <div class="location-shipping-to">
-                            <span class="title">Vận chuyển:</span>
-                            <select name="shipping_to" class="country">
-                                <option value="-1">Chọn thành phố</option>
-                                <option value="america">HCM</option>
-                                <option value="france">Bình Dương</option>
-                                <option value="germany">Đồng Nai</option>
-                            </select>
-                        </div>
-                        <div class="acepted-payment-methods">
-                            <ul class="payment-methods">
-                                <li><img src="/assets/template/images/card1.jpg" alt="" width="51" height="36"></li>
-                                <li><img src="/assets/template/images/card2.jpg" alt="" width="51" height="36"></li>
-                                <li><img src="/assets/template/images/card3.jpg" alt="" width="51" height="36"></li>
-                                <li><img src="/assets/template/images/card4.jpg" alt="" width="51" height="36"></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
