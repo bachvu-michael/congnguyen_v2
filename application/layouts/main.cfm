@@ -57,14 +57,14 @@
 			
 			#event.renderIncludes( "css" )#
 			#event.renderIncludes( "js", "top" )#
-		      <!-- Google tag (gtag.js) -->
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YM112RGNB"></script>
-				<script>
-				window.dataLayer = window.dataLayer || [];
-				function gtag(){dataLayer.push(arguments);}
-				gtag('js', new Date());
+		     <!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q39S4J5H1D"></script>
+			<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
 
-				gtag('config', 'G-2YM112RGNB');
+			gtag('config', 'G-Q39S4J5H1D');
 			</script>
 			<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
