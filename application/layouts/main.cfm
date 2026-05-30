@@ -18,6 +18,8 @@
 <cfoutput><!DOCTYPE html>
 	<html lang="vi">
 		<head>
+
+
 			#metaTags#
 
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,7 +57,15 @@
 			
 			#event.renderIncludes( "css" )#
 			#event.renderIncludes( "js", "top" )#
+		      <!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-2YM112RGNB"></script>
+				<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
 
+				gtag('config', 'G-2YM112RGNB');
+			</script>
 			<!--[if lt IE 9]>
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
